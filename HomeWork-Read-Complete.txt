@@ -1,0 +1,75 @@
+Book: The Swift Programming Language
+1. Read: Control Transfer Statement - page 131
+2. Read: API Availability - page 140
+3. Read: Recursive Enumerations - page 187
+4. Read: Subscript - page 233
+5. Read: Convenience initializer - page 260
+6. Read: Deinitialization- page 286
+7. Read: Optional Chaining - page 290
+8. Read: Converting Erros to Optional Values - page 311
+9. Read: Downcasting - page 316
+10. Read. Delegation - page 344
+10. Read: Optional Protocol Requirements - page 361
+11. Read: Automatic Reference Counting - page 405
+
+## Questionnaire:
+What is the difference between var and let?
+Var creates a variable that is mutable, let creates a constant that is immutable.
+
+What is an optional?
+A variable that can either have a value or be nil.
+
+Optional chaining vs optional binding - describe.
+Both involve using an if statement to assign an optional value to a new var/let. The difference is that optional chaining uses the "." operator on the returned value to access a property of it.
+
+For example:
+
+Optional Binding:
+If let x = y{
+//code that executes if y is not nil.
+}
+else{
+//code that executes if y is nil.
+}
+
+Optional Chaining:
+if let x = y.function()?.z{
+//Code that executes if y is not nil and z is not nil. Z is a property of the value returned by y's function.
+}
+else{
+//Code that executes if y or z is nil.
+}
+
+Mention all way that you know about to unwrap an optional.
+Forced unwrapping by using ! After the optional, optional binding, optional chaining, and implicitly unwrapped optionals.
+
+What is a closure?
+A block of code that can be executed elsewhere in the program, it has access to variables in the scope of where the closure was created even if it's executed in a different scope. Functions are a type of closure. Closures can be unnamed, they have a parameter list and return type followed by the "in" keyword before the body. Closures can be assigned to a variable or as a parameter passed to a function. They can be declared by using {}.
+
+Class and a struct - describe.
+Both contain properties and functions. Classes are reference types stored on the heap, structs are value types stored on the stack. Classes can inherit from a base class, structs cannot inherit. Both classes and structs can implement protocols.
+
+What's mean '??' ? write an example.
+?? Is the nil-coalescing operator, it allows a default value to be used if an optional is nil.
+
+Let x = y ?? z
+// if y is nil then z will be assigned to x, otherwise y will be assigned to x.
+
+What is a tuple?
+A tuple is a variable or constant with multiple values, each value can be of a different type. They are helpful in getting around the fact that a function can only return one value, a function can return multiple values by returning a single tuple.
+
+Any vs AnyObject? - describe
+"Any" is a type that can hold any data type: strings, ints, doubles, bools, arrays, dictionaries, sets, classes and structs. "AnyObject" can only hold class objects.
+
+What is a protocol?
+Protocols are like interfaces in other languages. They declare properties and methods that a class or struct must have if it implements the protocol. The protocol declares the functions but the object defines them. Objects of different classes/structs can be stored in the same array if they all implement the protocol that the array is declared as, but only their properties/functions found in the protocol can be accessed.
+
+What is Delegation patterns?
+A Delegation pattern is when an object will send itself as a parameter in another object's (the delegate's) function. The delegate object can then work with the original object's properties and methods by using the "self" keyword.
+
+What is UIKit?
+UIKit is a framework for developing iOS apps. It's an imperative framework that is older than SwiftUI which is a declarative framework. UIKit requires updating views so they remain accurate after data has been altered, while SwiftUI binds data to the view so programmers don't need to be concerned with that.
+
+Read these articles
+https://developer.apple.com/documentation/swift/choosing_between_structures_and_classes
+https://fluffy.es/reference-vs-value-type/
