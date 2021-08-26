@@ -8,8 +8,9 @@
 import Foundation
 class MovieViewModel {
     
+    init (){}
     // MARK:- internal properties
-    var movieBinding (() -> Void)?
+    var movieBinding: (() -> Void)?
     var count: Int { movies.count }
     
     func getTitle (at row: Int) -> String { movies[row].originalTitle }
@@ -17,12 +18,12 @@ class MovieViewModel {
     
     // MARK:- private properties
     private let networkManager = NetworkManager()
-    private var movies = [Movie]()
+    var movies = [Movie]()
     
     // MARK:- internal properties
-    private func fetchMovies() {
+    func fetchMovies() {
         // create the url
-        let urlS = "https://api.themoviedb.org/3/movie/550?api_key=a53510055c2f6a1d5b665c62a0dccfcb&language=en-US"
+        let urlS = "https://api.themoviedb.org/3/movie/550?api_key=a53510055c2f6a1d5b665c62a0dccfcb"
         
         networkManager.getMovies(from: urlS) { [weak self] result in
             switch result {
